@@ -1,0 +1,20 @@
+<h2>Ninja Listing</h2>
+<form>
+    <div class="form-group">
+        <label>Filter Ninjas By Name:</label>
+        <input type="text" [(ngModel)]="term" class="form-control">
+    </div>
+</form>
+<ul class="list-group">
+    <li *ngFor="let ninja of ninjas | filter:term" class="list-group-item">
+        <span class="badge">{{ ninja.belt }} Belt</span>
+        {{ ninja.name }}
+    </li>
+</ul>
+
+<br>
+<form id="add-ninja">
+    <input type="text" [(ngModel)]="name">
+    <input type="text" [(ngModel)]="belt">
+    <button (click)="fbPostData(name, belt)">Add Ninja</button>
+</form>

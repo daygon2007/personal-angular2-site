@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>My Web Development Portfolio</h2>
+    <ol class="breadcrumb">
+      <li><a (click)="goHome();">Home</a></li> 
+      <li class="active">Portfolio</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-6 portfolio-item" *ngFor="let portfolio of portfolios">
+            <div class="portfolio-image">
+                <a href="{{ portfolio.url }}" target="_blank">
+                    <img src="app/shared/img/portfolio/{{ portfolio.screenShot }}" alt="{{ portfolio.title }}">
+                    <div class="portfolio-overlay">
+                        
+                    </div>
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                </a>
+            </div>
+            <h3 class="item-title">{{ portfolio.title }}</h3>
+            <p [innerHTML]="portfolio.content"></p>
+        </div>
+    </div>
+</div>

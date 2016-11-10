@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Web Development & Search Engine Optimization Blog</h2>
+    <ol class="breadcrumb">
+      <li><a (click)="goHome();">Home</a></li> 
+      <li class="active">Blog</li>
+    </ol>
+    
+    <div class="col-md-8">
+        <div *ngFor="let blog of blogs" class="blog-post" (click)="gotoBlog(blog)">
+            <h3 class="post-title">{{ blog.title }}</h3>
+            <p>Alias {{ blog.alias }}</p>
+            <img src="app/shared/img/blog/{{ blog.image}}" alt="{{ blog.title }}" class="post-image">
+            <p class="post-date">{{ blog.date | date:'longDate' }}</p>
+            <p [innerHTML]="blog.content | ellipsis:100" class="post-content"></p>
+            <p class="read-more">Read More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+        </div>
+    </div>
+    <app-sidebar></app-sidebar>
+</div>

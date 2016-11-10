@@ -1,0 +1,197 @@
+#about{
+    padding:25px 0;
+    h3, .lead{
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h3{
+        font-size: 2.5em;
+    }
+    h4, h5{
+        text-transform: uppercase;
+    }
+    p{
+        line-height: 1.6em;
+    }
+    
+}
+
+#skills{
+    background: url('app/shared/img/home/skills-section.jpg') center center no-repeat;
+    background-size: cover;
+    min-height: 150px;
+    position: relative;
+    .overlay{
+        background: rgba(255,255,255,0.75);
+        display:block;
+        padding:25px 0;
+
+    }
+    .container{
+        h3{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            color: #2d2d2d;
+            margin-bottom: 25px;
+        }
+        .logo{
+            
+            img{
+                width:100%;
+                 @media (max-width: 768px) { 
+                     //max-height:200px;
+                 }
+            }
+            h4{
+                text-align: center;
+                text-transform: uppercase;
+                color: #2d2d2d;
+            }
+        }
+    }
+}
+
+#resume{
+    padding: 25px 0;
+    h3{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        color: #2d2d2d;
+        margin-bottom: 25px;
+    }
+    .resume-item{
+        padding: 15px 0;
+        border-bottom: thin solid #ccc;
+        &:last-of-type{
+            border:none;
+        }
+        .company-info{
+            padding-right: 50px;
+            border-right: thin solid #ccc;
+            .month{
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            .year{
+                font-size: 3em;
+                color:#970000;
+                font-weight: bold;
+                &.end{
+                    //border-bottom: thin solid #ccc;
+                }
+            }
+            .dash{
+                font-size: 5em;
+                margin-top: .25em;
+                margin-left: -15px;
+                line-height: 1em;
+            }
+            .company-name{
+                text-align: center;
+                color: #970000;
+                text-transform: uppercase;
+                font-size: 2em;
+                border-top: thin solid #ccc;
+                padding-top: 5px;
+            }
+            .job-title{
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 1.25em;
+            }
+        }
+        .job-info{
+            padding-left: 15px;
+            //border-left: thin solid #ccc;
+            .job-title{
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+#portfolio{
+    padding: 25px 0 0;
+    h3{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        color: #2d2d2d;
+        margin-bottom: 25px;
+    }
+    .portfolio-item{
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+        padding:0;
+        img{
+            width:100%;
+        }
+        .portfolio-overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(151, 0, 0, 0);
+            transition: all .5s ease;
+            h5{
+                position: absolute;
+                bottom: -25%;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #fff;
+                transition: all .5s ease-in-out;
+                font-size: 2em;
+                font-weight: normal;
+                opacity: 0;
+            }
+        }
+        &:hover{
+            
+            .portfolio-overlay{
+                background-color: rgba(151, 0, 0, 0.75);
+                h5{
+                    bottom: 0%;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+#contact{
+    background: url(app/shared/img/home/contact-section.jpg) center center;
+    background-size: cover;
+    margin-bottom: -15px;
+    .overlay{
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 25px 0;
+
+    }
+    h3{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        color: #2d2d2d;
+        margin-bottom: 25px;
+    }
+}
+.button{
+    padding: 10px 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 15px;
+    &.primary{
+        background: #970000;
+        color: #fff;
+    }
+}
+.red{
+    color: #970000;
+}
+.section-text{
+    
+}

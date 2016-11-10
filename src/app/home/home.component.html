@@ -1,0 +1,110 @@
+<section id="about">
+    <div class="container">
+        <h3>About</h3>
+        <p class="lead">"I believe in one thing, hard work. If you work hard today, tomorrow's always a little easier."</p>
+        <div class="col-md-5">
+            <img src="app/shared/img/home/jonathon.jpg" alt="Jonathon Harrelson - Web Developer & Search Engine Specialist">
+        </div>
+        <div class="col-md-7">
+            <h4>Jonathon Harrelson</h4>
+            <h5>Web Developer • Search Engine Specialist • Professional</h5>
+            <p>I consider myself a senior front-end developer and a junior full-stack developer. 
+            I've been working in front-end web development technologies since I was introduced to web development 
+            at the age of 14. I am starting to work my way down the stack as I learn different languages and 
+            frameworks how they interact with servers, learning more about noSQL as it pertains to API's and 
+            the newer ways data is being manipulated on the internet.</p>
+            <p>Search Engine Optimization, I think, should come as a subset of anything web related. My theory is, if you're going
+            going to build a website you might as well make it search engine friendly as it pertains to structure, development workflow,
+             and basic element attribution. I take a ton of pride in the work that I do, I make sure it's scaleable and is ready to fit into any digital marketing plan.</p>
+            <a href="app/shared/resume.pdf" class="button primary">Download Resume <i class="fa fa-download" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+<section id="skills">
+    <div class="overlay">
+        <div class="container">
+            <h3>What I Know</h3>
+            <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                <img src="app/shared/img/home/HTML5_Logo_256.png" alt="HTML5 Developer">
+                <h4>HTML5</h4>
+                <p>I have been using HTML5 since the orginal release candidate back in 2012.</p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                <img src="app/shared/img/home/css3.png" alt="CSS3 Developer">
+                <h4>CSS 3</h4>
+                <p>I have learned to use the greatness of CSS3 and SASS in all of my web projects.</p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                <img src="app/shared/img/home/javascript-logo.png" alt="Javascript Developer">
+                <h4>Javascript</h4>
+                <p>I'm proficient in jQuery & Angular 2 Frameworks. I also use Gulp for workflow automation.</p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                <img src="app/shared/img/home/php-logo.png" alt="PHP Developer">
+                <h4>PHP</h4>
+                <p>I've used PHP while building for various Content Management Systems as well as custom implementations.</p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                <img src="app/shared/img/home/wordpress-logo.png" alt="WordPress Developer">
+                <h4>WordPress</h4>
+                <p>Over 25% of websites today are built on this content managment system, I have been developing on it for over 5 years.</p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 logo">
+                <img src="app/shared/img/home/modx-logo.png" alt="ModX Developer">
+                <h4>ModX</h4>
+                <p>ModX is my most recent Content Management System I've learn. I have been developing for it since min 2015.</p>
+            </div>
+        </div> 
+    </div>
+</section>
+
+<section id="resume">
+    <div class="container">
+        <h3>Work History</h3>
+        <div class="resume-item row" *ngFor="let resume of resumes">
+            <div class="col-md-4 company-info">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <span class="month">{{ resume.monthStart }}</span><br/>
+                        <span class="year">{{ resume.yearStart }}</span>
+                    </div>
+                    <div class="col-xs-2 dash">-</div>
+                    <div class="col-xs-5">
+                        <span class="month">{{ resume.monthEnd }}</span><br/>
+                        <span class="year end">{{ resume.yearEnd }}</span>
+                    </div>
+                </div>
+                <div class="company-name">{{ resume.companyName }}</div>
+                <div class="job-title">{{ resume.companyPosition }}</div>
+                
+            </div>
+            <div class="col-md-8 job-info">
+                <h4 class="job-title">{{ resume.companyPosition }}</h4>
+                <p>{{ resume.jobDescription }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h3>Some of my work</h3>
+    <div class="row">
+        <div class="col-md-3 portfolio-item" *ngFor="let portfolio of portfolios | slice:0:4">
+            <img src="app/shared/img/portfolio/{{ portfolio.screenShot }}" alt="{{ portfolio.title }}">
+            <div class="portfolio-overlay">
+                <h5 class="item-title">{{ portfolio.title }}</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="overlay">
+        <div class="container">
+            <h3>Contact Me</h3>
+            <div class="row">
+                <div id="RWhZZ01nPT0=" class="contact-form col-md-12 "></div>
+            </div>
+        </div>
+    </div>
+</section>

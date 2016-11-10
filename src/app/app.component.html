@@ -1,3 +1,65 @@
-<h1>
-  {{title}}
-</h1>
+<div id="admin-bar" *ngIf="isLogged === true">
+    <div class="container">
+        <a class="admin-link" [routerLink]="['new-blog']">New Blog Post</a>
+        <a class="admin-link" [routerLink]="['new-portfolio']">New Porfolio Item</a>
+        <a class="admin-link" [routerLink]="['resume']">New Resume Item</a>
+        <a class="admin-link" (click)="signOut()">Sign Out</a>
+    </div>
+</div>
+<header>
+    <div id="overlay"></div>
+    <div id="title">
+        <h1>
+          Jonathon <span class="red">Harrelson</span>
+        </h1>
+        <h2>Web Developer &amp; Search Engine Optimization Specialist</h2>
+    </div>
+</header>
+
+
+
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="/">Jonathon <span class="red">Harrelson</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a [routerLink]="['/']">Home</a></li>
+                <li><a [routerLink]="['blog']">Blog</a></li>
+                <li><a [routerLink]="['portfolio']">Portfolio</a></li>
+                <!--<li><a [routerLink]="['web-development']">Web Development</a></li>-->
+                <!--<li><a [routerLink]="['seo-services']">SEO Services</a></li>-->
+                <li><a [routerLink]="['about']">About</a></li>
+                <li><a [routerLink]="['contact']">Contact</a></li>
+            </ul>
+
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+
+
+
+
+
+<section id="main">
+    <router-outlet></router-outlet>
+</section>
+<footer>
+    <a href="https://www.facebook.com/jonathon.harrelson" target="_blank" title="My Facebook Page"><i class="fa fa-facebook"></i></a>
+    <a href="http://www.twitter.com/MrJHarrelson" target="_blank" title="My Twitter Feed"><i class="fa fa-twitter"></i></a>
+    <a href="https://plus.google.com/+JonathonHarrelson" target="_blank" title="My Google Plus Page" class="hidden-xs"><i class="fa fa-google-plus"></i></a>
+    <a href="https://www.linkedin.com/in/jonathonharrelson" target="_blank" title="My LinkedIn Profile"><i class="fa fa-linkedin"></i></a>
+    <a href="https://instagram.com/daygon2007/" target="_blank" title="My Instagram Pictures" class="hidden-xs"><i class="fa fa-instagram"></i></a>
+    <a href="http://codepen.io/jharrelson/" target="_blank" title="My Playground" class="hidden-xs"><i class="fa fa-codepen"></i></a>
+    <a href="https://github.com/daygon2007" target="_blank" title="My Repository" class="hidden-xs"><i class="fa fa-github"></i></a>
+    <h3>Jonathon Harrelson</h3>
+    <p>&copy; Copyright Jonathon Harrelson. All Rights Reserved.</p>
+    <!--<p class="small">This site was built using the Angular 2 Javascript Framework, Bootstrap 3 CSS Framework, jQuery 2, HTML5, SASS, and Firebase</p>-->
+</footer>

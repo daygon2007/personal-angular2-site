@@ -1,0 +1,11 @@
+<div class="container">
+  <form id="add-portfolio" class="">
+      <input type="text" [(ngModel)]="title" class="form-control" placeholder="Post Title" id="postTitle" name="postTitle">
+      <p>Alias: <input [(ngModel)]="alias" type="text" value="{{ title | lowercase | removeSpecialCharacters | spaceHyphen }}" id="alias" name="alias" /> 
+      | Url: <input [(ngModel)]="url" type="text" placeholder="http://www.example.com" name="url" /> 
+      | Screenshot: <input [(ngModel)]="screenShot" type="text" placeholder="example.jpg" name="screenShot" /></p>
+      <label for="">Project Description</label>
+      <textarea [(ngModel)]="content" class="form-control" name="content"></textarea>
+      <button (click)="fbPostData(title, url, screenShot, content, alias);" class="btn btn-primary">Add Post</button>
+  </form>
+</div>

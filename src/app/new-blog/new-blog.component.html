@@ -1,0 +1,13 @@
+<div class="container">
+    <form id="add-blog" class="">
+        <input type="text" [(ngModel)]="title" class="form-control" placeholder="Post Title" id="postTitle" name="postTitle">
+        <p>
+            Alias: <input [(ngModel)]="alias" type="text" value="{{ title | lowercase | removeSpecialCharacters | spaceHyphen }}" id="alias" name="alias" /> 
+            | Post Image: <input [(ngModel)]="image" type="text" placeholder="example.jpg" name="image" /> 
+            | Author: <input [(ngModel)]="author" type="text" value="{{ user.displayName }}" name="author" /> 
+            | Date Posted: <input [(ngModel)]="date" type="text" value="{{ date | date:'longDate' }}" name="date" /></p>
+        <label for="">Post Content</label>
+        <textarea [(ngModel)]="content" class="form-control" name="content"></textarea>
+        <button (click)="fbPostData(alias, title, content, author, date, image);" class="btn btn-primary">Add Post</button>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <form id="add-resume" class="">
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="monthStart" class="form-control" placeholder="Start Month" id="monthStart" name="monthStart">
+        </div>
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="yearStart" class="form-control" placeholder="Start Year" id="yearStart" name="yearStart">
+        </div>
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="monthEnd" class="form-control" placeholder="End Month" id="monthEnd" name="monthEnd">
+        </div>
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="yearEnd" class="form-control" placeholder="End Year" id="yearEnd" name="yearEnd">
+        </div>
+        <div class="col-md-12">
+            <input type="text" [(ngModel)]="companyName" class="form-control" placeholder="Company Name" id="companyName" name="companyName">
+        </div>
+        <div class="col-md-3">
+            <input [(ngModel)]="alias" type="text" value="{{ companyName | lowercase | removeSpecialCharacters | spaceHyphen }}" id="alias" class="form-control" placeholder="alias" name="alias" />
+        </div>
+        <div class="col-md-12">
+            <input type="text" [(ngModel)]="companyPosition" class="form-control" placeholder="Company Position" id="companyPosition" name="companyPosition">
+        </div>
+        <div class="col-md-12">
+            <textarea [(ngModel)]="jobDescription" class="form-control" name="jobDescription"></textarea>
+        </div>
+        <div class="col-md-12">
+            <button (click)="fbPostData(monthStart, yearStart, monthEnd, yearEnd, companyName, companyPosition, jobDescription, alias);" class="btn btn-primary">Add Post</button>
+        </div>
+    </form>
+</div>

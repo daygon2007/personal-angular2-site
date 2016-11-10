@@ -1,0 +1,115 @@
+#admin-bar{
+    background-color: #2d2d2d;
+    
+    .admin-link{
+        color: rgba(255,255,255, 0.5);
+        padding: 10px 10px;
+        border-right: thin solid rgba(255,255,255, 0.5);
+        display:inline-block;
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+        &:last-of-type{
+            border-right: none;
+        }
+        &:hover{
+            color: rgba(255,255,255, 1);
+            text-decoration:none;
+        }
+    }
+}
+header{
+    background: url('app/shared/img/header.jpg') center center no-repeat;
+    background-size: cover;
+    min-height: 30vh;
+    position: relative;
+    transition: all .5s ease-in-out;
+    &.home-banner{
+        min-height:75vh;
+    }
+    @media (max-width: 768px) { 
+        min-height: 50vh;
+        display:none;
+    }
+    #overlay{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background: rgba(0,0,0,0.5);
+        display:block;
+    }
+    #title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width:100%;
+        h1,h2{
+            text-align: center;
+            font-size: 6.5em;
+            color: #fff;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            width: 100%;
+            @media (max-width: 768px) { 
+                font-size: 5em;
+            }
+            span{
+                color: #970000;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
+        }
+        h2{
+        font-size:2em;
+        letter-spacing:2px;
+        }
+    }
+}
+.navbar{
+    background: #2d2d2d;
+    border-radius: 0;
+    a{
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .nav{
+        a{
+            &:hover, &:active, &:focus{
+                background: #970000;
+            }
+        }
+    }
+    .navbar-brand{
+        font-size:2em;
+        @media (max-width: 768px) { 
+            font-size:1em;
+        }
+    }
+    .icon-bar{
+        background:#fff;
+    }
+}
+footer{
+    padding:25px 0;
+    background: #970000;
+    text-align:center;
+    margin-top:15px;
+    color:#fff;
+    a{
+        color: #fff;
+        font-size: 2.5em;
+        display: inline-block;
+        margin:0 10px;
+        transition: all .5s ease-in-out;
+        &:hover{
+            color: #2d2d2d;
+        }
+    }
+    h3{
+        text-transform: uppercase;
+    }
+    .small{
+        font-size:.75em;
+    }
+}

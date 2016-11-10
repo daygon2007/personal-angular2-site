@@ -1,0 +1,42 @@
+{{ pageTitle }}
+<div class="container">
+    <h2 *ngFor="let blog of blogs" class="blog-title">{{ blog.title }}</h2>
+    <ol class="breadcrumb">
+      <li><a (click)="goHome();">Home</a></li> 
+      <li><a (click)="goToBlogList();">Blog</a></li>
+      <li class="active" *ngFor="let blog of blogs">{{ blog.title }}</li>
+    </ol>
+    <div class="row">
+      <div class="col-md-8 blog-post" *ngFor="let blog of blogs">
+        <img src="app/shared/img/blog/{{ blog.image}}" alt="{{ blog.title }}" class="post-image">
+        <p [innerHTML]="blog.content"></p>
+        <div id="disqus_thread"></div>
+      </div>
+    
+    <app-sidebar></app-sidebar>
+  </div>
+  <!-- Button trigger modal -->
+  <button *ngIf="isLogged === true" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Edit Post
+  </button>
+  
+  <!-- Modal -->
+  <div  *ngIf="isLogged === true" class="modal fade blog-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div *ngFor="let blog of blogs" class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><input type="text" [(ngModel)]="blog.title" class="form-control" value="{{ blog.title }}"></h4>
+        </div>
+        <div class="modal-body">
+            <input [(ngModel)]="blog.alias" class="ng-dirty ng-touched" type="text" value="{{ blog.title | lowercase | removeSpecialCharacters | spaceHyphen }}" />
+          <textarea [(ngModel)]="blog.content" class="form-control" value="{{ blog.content }}"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updatePost(blog.alias,blog.title,blog.content)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

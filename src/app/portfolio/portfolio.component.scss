@@ -1,0 +1,46 @@
+.portfolio-item{
+    
+    .portfolio-image{
+        position: relative;
+        max-height:250px;
+        overflow-y: hidden;
+        img{
+            width: 100%;
+        }
+        .portfolio-overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0);
+            transition: all .5s ease;
+        }
+        .fa{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            color: #fff;
+            transition: all .5s ease;
+            opacity: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        &:hover{
+            .portfolio-overlay{
+                background-color: rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+            }
+            .fa{
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+    .item-title{
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+}

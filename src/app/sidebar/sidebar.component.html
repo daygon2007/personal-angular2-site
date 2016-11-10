@@ -1,0 +1,16 @@
+<div class="col-md-4" id="sidebar">
+  <h4>Recent Posts</h4>
+    <div *ngFor="let blog of blogs | slice:0:3" (click)="gotoBlog(blog)" class="recent-post">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="app/shared/img/blog/{{ blog.image}}" alt="{{ blog.title }}" class="post-image">
+        </div>
+        <div class="col-md-7">
+          <div class="date">{{ blog.date | date:longDate }}</div>
+          <h5 class="recent-title red">{{ blog.title }}</h5>
+          <p [innerHTML]="blog.content | ellipsis:25" class="recent-content"></p>
+          <p class="read-more">Read More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+        </div>
+    </div>
+  </div>
+</div>

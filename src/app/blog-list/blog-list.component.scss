@@ -1,0 +1,30 @@
+.blog-post{
+    margin-bottom: 20px;
+    .post-title{
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 3em;
+    }
+    .post-image{
+        width:100%;
+    }
+    .post-date{
+        font-size: .75em;
+    }
+    .post-content{
+        font-size: 1.25em;
+    }
+    .read-more{
+        display:inline-block;
+        background-color: #970000;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 15px;
+        transition: all .5s ease-in-out;
+        text-transform: uppercase;
+        &:hover{
+            background-color: #2d2d2d;
+            cursor: pointer;
+        }
+    }
+}
